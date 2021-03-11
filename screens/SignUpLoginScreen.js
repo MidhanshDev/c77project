@@ -46,22 +46,11 @@ export default class BookDonateScreen extends React.Component {
   };
   render() {
     return (
-      <View style={{backgroundColor:"cyan"}}>
-        <Text
-          style={{
-            color: "grey",
-            fontSize: 18,
-            fontWeight: "bold",
-            marginLeft: 55,
-            marginTop:400,
-          }}
-        >
-          USERNAME
-        </Text>
-        
-        <View style={{ alignItems: "center" }}>
+      <View style={{ backgroundColor: "cyan" }}>
+        <View style={{ alignItems: "center", marginTop: 50 }}>
           <TextInput
             style={StyleSheet.loginBox}
+            placeholder="USERNAME"
             keyboardType="email-address"
             onChangeText={(text) => {
               this.setState({
@@ -70,9 +59,21 @@ export default class BookDonateScreen extends React.Component {
             }}
           />
         </View>
+        <View style={{ alignItems: "center", marginTop: 20 }}>
+          <TextInput
+            style={StyleSheet.loginBox}
+            placeholder="PASSWORD"
+            keyboardType="numeric"
+            onChangeText={(text) => {
+              this.setState({
+                password: text,
+              });
+            }}
+          />
+        </View>
         <View style={{ alignItems: "center" }}>
           <TouchableOpacity
-            style={[styles.button, { marginBottom: 10 }]}
+            style={[styles.button]}
             onPress={() => {
               this.userLogin(this.state.username, this.state.password);
             }}
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderWidth: 1.5,
     fontSize: 20,
-    marginTop: 10,
+    marginTop: 50,
     paddingLeft: 10,
     borderColor: "#ff3",
   },
@@ -126,6 +127,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 10.32,
     elevation: 16,
-    marginTop: 50,
+    marginTop: 250,
   },
 });
