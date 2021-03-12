@@ -49,7 +49,7 @@ export default class BookDonateScreen extends React.Component {
       <View style={{ backgroundColor: "cyan" }}>
         <View style={{ alignItems: "center", marginTop: 50 }}>
           <TextInput
-            style={StyleSheet.loginBox}
+            style={styles.loginBox}
             placeholder="USERNAME"
             keyboardType="email-address"
             onChangeText={(text) => {
@@ -61,7 +61,7 @@ export default class BookDonateScreen extends React.Component {
         </View>
         <View style={{ alignItems: "center", marginTop: 20 }}>
           <TextInput
-            style={StyleSheet.loginBox}
+            style={styles.loginBox}
             placeholder="PASSWORD"
             keyboardType="numeric"
             onChangeText={(text) => {
@@ -127,6 +127,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 10.32,
     elevation: 16,
-    marginTop: 250,
+    marginTop: 170,
   },
 });
