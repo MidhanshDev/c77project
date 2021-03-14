@@ -9,6 +9,7 @@ import {
   Alert,
 } from "react-native";
 import db from "../config";
+import firebase from "firebase";
 
 export default class BookDonateScreen extends React.Component {
   constructor() {
@@ -34,7 +35,7 @@ export default class BookDonateScreen extends React.Component {
   userLogin = (username, password) => {
     firebase
       .auth()
-      .signInWithEmailAndPassword(username, passsword)
+      .signInWithEmailAndPassword(username, password)
       .then(() => {
         return Alert.alert("Successfull Login");
       })
@@ -63,6 +64,7 @@ export default class BookDonateScreen extends React.Component {
           <TextInput
             style={styles.loginBox}
             placeholder="PASSWORD"
+            secureTextEntry={true}
             keyboardType="numeric"
             onChangeText={(text) => {
               this.setState({
